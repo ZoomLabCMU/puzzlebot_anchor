@@ -1,0 +1,13 @@
+name: puzzle
+channels:
+  - defaults
+dependencies:
+  - python=3.7
+  - numpy
+  - matplotlib
+  - ipython
+  - scipy
+  - yaml
+  - scikit-learn
+  - shapely
+prefix: /usr0/home/yisha/anaconda3/envs/puzzle

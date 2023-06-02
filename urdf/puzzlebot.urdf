@@ -1,0 +1,935 @@
+<?xml version="1.0" ?>
+<robot name="puzzlebot">
+  <material name="blue">
+    <color rgba="0.40 0.60 0.80 0.99"/>
+  </material>
+  <material name="gray">
+    <color rgba="0.50 0.50 0.50 0.99"/>
+  </material>
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+  <link name="left_base">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0200"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0200"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="2.416666666666667e-06" ixy="0" ixz="0" iyy="3.366666666666667e-07" iyz="0" izz="2.0866666666666673e-06"/>
+    </inertial>
+  </link>
+  <joint name="left_base_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 1.5708" xyz="0.0000 0.0240 0.0100"/>
+    <parent link="base_link"/>
+    <child link="left_base"/>
+  </joint>
+  <link name="left_center">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0060 0.0100"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0060 0.0100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="1.1333333333333343e-07" ixy="0" ixz="0" iyy="8.666666666666666e-08" iyz="0" izz="3.333333333333342e-08"/>
+    </inertial>
+  </link>
+  <joint name="left_center_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0150"/>
+    <parent link="left_base"/>
+    <child link="left_center"/>
+  </joint>
+  <link name="left_c0">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <cylinder length="0.008" radius="0.0045"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <cylinder length="0.008" radius="0.0045"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="1.0395833333333331e-07" ixy="0" ixz="0" iyy="1.0395833333333331e-07" iyz="0" izz="1.0124999999999998e-07"/>
+    </inertial>
+  </link>
+  <joint name="left_c0_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 -0.0180 0.0150"/>
+    <parent link="left_base"/>
+    <child link="left_c0"/>
+  </joint>
+  <link name="left_c1">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <cylinder length="0.008" radius="0.0045"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <cylinder length="0.008" radius="0.0045"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="1.0395833333333331e-07" ixy="0" ixz="0" iyy="1.0395833333333331e-07" iyz="0" izz="1.0124999999999998e-07"/>
+    </inertial>
+  </link>
+  <joint name="left_c1_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0080 0.0150"/>
+    <parent link="left_base"/>
+    <child link="left_c1"/>
+  </joint>
+  <link name="left_c_left">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0020 0.0100"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0020 0.0100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="8.666666666666666e-08" ixy="0" ixz="0" iyy="8.666666666666666e-08" iyz="0" izz="6.666666666666667e-09"/>
+    </inertial>
+  </link>
+  <joint name="left_c_left_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0240 0.0150"/>
+    <parent link="left_base"/>
+    <child link="left_c_left"/>
+  </joint>
+  <link name="left_c_right">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0020 0.0100"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0020 0.0100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="8.666666666666666e-08" ixy="0" ixz="0" iyy="8.666666666666666e-08" iyz="0" izz="6.666666666666667e-09"/>
+    </inertial>
+  </link>
+  <joint name="left_c_right_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 -0.0240 0.0150"/>
+    <parent link="left_base"/>
+    <child link="left_c_right"/>
+  </joint>
+  <link name="left_top">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0100"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="2.166666666666667e-06" ixy="0" ixz="0" iyy="8.666666666666666e-08" iyz="0" izz="2.0866666666666673e-06"/>
+    </inertial>
+  </link>
+  <joint name="left_top_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0250"/>
+    <parent link="left_base"/>
+    <child link="left_top"/>
+  </joint>
+  <link name="right_base">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0200"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0200"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="2.416666666666667e-06" ixy="0" ixz="0" iyy="3.366666666666667e-07" iyz="0" izz="2.0866666666666673e-06"/>
+    </inertial>
+  </link>
+  <joint name="right_base_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 -1.5708" xyz="0.0000 -0.0240 0.0100"/>
+    <parent link="base_link"/>
+    <child link="right_base"/>
+  </joint>
+  <link name="right_center">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0060 0.0100"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0060 0.0100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="1.1333333333333343e-07" ixy="0" ixz="0" iyy="8.666666666666666e-08" iyz="0" izz="3.333333333333342e-08"/>
+    </inertial>
+  </link>
+  <joint name="right_center_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0150"/>
+    <parent link="right_base"/>
+    <child link="right_center"/>
+  </joint>
+  <link name="right_c0">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <cylinder length="0.008" radius="0.0045"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <cylinder length="0.008" radius="0.0045"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="1.0395833333333331e-07" ixy="0" ixz="0" iyy="1.0395833333333331e-07" iyz="0" izz="1.0124999999999998e-07"/>
+    </inertial>
+  </link>
+  <joint name="right_c0_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 -0.0180 0.0150"/>
+    <parent link="right_base"/>
+    <child link="right_c0"/>
+  </joint>
+  <link name="right_c1">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <cylinder length="0.008" radius="0.0045"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <cylinder length="0.008" radius="0.0045"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="1.0395833333333331e-07" ixy="0" ixz="0" iyy="1.0395833333333331e-07" iyz="0" izz="1.0124999999999998e-07"/>
+    </inertial>
+  </link>
+  <joint name="right_c1_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0080 0.0150"/>
+    <parent link="right_base"/>
+    <child link="right_c1"/>
+  </joint>
+  <link name="right_c_left">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0020 0.0100"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0020 0.0100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="8.666666666666666e-08" ixy="0" ixz="0" iyy="8.666666666666666e-08" iyz="0" izz="6.666666666666667e-09"/>
+    </inertial>
+  </link>
+  <joint name="right_c_left_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0240 0.0150"/>
+    <parent link="right_base"/>
+    <child link="right_c_left"/>
+  </joint>
+  <link name="right_c_right">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0020 0.0100"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0020 0.0100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="8.666666666666666e-08" ixy="0" ixz="0" iyy="8.666666666666666e-08" iyz="0" izz="6.666666666666667e-09"/>
+    </inertial>
+  </link>
+  <joint name="right_c_right_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 -0.0240 0.0150"/>
+    <parent link="right_base"/>
+    <child link="right_c_right"/>
+  </joint>
+  <link name="right_top">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0100"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="2.166666666666667e-06" ixy="0" ixz="0" iyy="8.666666666666666e-08" iyz="0" izz="2.0866666666666673e-06"/>
+    </inertial>
+  </link>
+  <joint name="right_top_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0250"/>
+    <parent link="right_base"/>
+    <child link="right_top"/>
+  </joint>
+  <link name="left_wheel">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <cylinder length="0.003" radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <cylinder length="0.003" radius="0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.1"/>
+      <inertia ixx="2.575e-06" ixy="0" ixz="0" iyy="2.575e-06" iyz="0" izz="5e-06"/>
+    </inertial>
+  </link>
+  <joint name="left_wheel_joint" type="continuous">
+    <origin rpy="-1.5708 0.0000 0.0000" xyz="0.0000 0.0200 0.0020"/>
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <axis xyz="0 0 1"/>
+    <dynamics friction="1.0"/>
+  </joint>
+  <link name="right_wheel">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <cylinder length="0.003" radius="0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <cylinder length="0.003" radius="0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.1"/>
+      <inertia ixx="2.575e-06" ixy="0" ixz="0" iyy="2.575e-06" iyz="0" izz="5e-06"/>
+    </inertial>
+  </link>
+  <joint name="right_wheel_joint" type="continuous">
+    <origin rpy="-1.5708 0.0000 0.0000" xyz="0.0000 -0.0200 0.0020"/>
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <axis xyz="0 0 1"/>
+    <dynamics friction="1.0"/>
+  </joint>
+  <transmission name="left_wheel_transmission" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_wheel_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_wheel_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="right_wheel_transmission" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_wheel_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_wheel_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link name="front_wheel">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.1"/>
+      <inertia ixx="1.0000000000000002e-06" ixy="0" ixz="0" iyy="1.0000000000000002e-06" iyz="0" izz="1.0000000000000002e-06"/>
+    </inertial>
+  </link>
+  <joint name="front_wheel_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0190 0.0000 -0.0040"/>
+    <parent link="base_link"/>
+    <child link="front_wheel"/>
+  </joint>
+  <link name="back_wheel">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <sphere radius="0.005"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.1"/>
+      <inertia ixx="1.0000000000000002e-06" ixy="0" ixz="0" iyy="1.0000000000000002e-06" iyz="0" izz="1.0000000000000002e-06"/>
+    </inertial>
+  </link>
+  <joint name="back_wheel_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="-0.0190 0.0000 -0.0040"/>
+    <parent link="base_link"/>
+    <child link="back_wheel"/>
+  </joint>
+  <link name="front_base">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0200"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0200"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="2.416666666666667e-06" ixy="0" ixz="0" iyy="3.366666666666667e-07" iyz="0" izz="2.0866666666666673e-06"/>
+    </inertial>
+  </link>
+  <joint name="front_base_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0240 0.0000 0.0100"/>
+    <parent link="base_link"/>
+    <child link="front_base"/>
+  </joint>
+  <link name="front_hole_left">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0190 0.0100"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0190 0.0100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="3.841666666666667e-07" ixy="0" ixz="0" iyy="8.666666666666666e-08" iyz="0" izz="3.0416666666666674e-07"/>
+    </inertial>
+  </link>
+  <joint name="front_hole_left_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0155 0.0150"/>
+    <parent link="front_base"/>
+    <child link="front_hole_left"/>
+  </joint>
+  <link name="front_hole_right">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0190 0.0100"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0190 0.0100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="3.841666666666667e-07" ixy="0" ixz="0" iyy="8.666666666666666e-08" iyz="0" izz="3.0416666666666674e-07"/>
+    </inertial>
+  </link>
+  <joint name="front_hole_right_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 -0.0155 0.0150"/>
+    <parent link="front_base"/>
+    <child link="front_hole_right"/>
+  </joint>
+  <link name="front_top">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0100"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="2.166666666666667e-06" ixy="0" ixz="0" iyy="8.666666666666666e-08" iyz="0" izz="2.0866666666666673e-06"/>
+    </inertial>
+  </link>
+  <joint name="front_top_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0250"/>
+    <parent link="front_base"/>
+    <child link="front_top"/>
+  </joint>
+  <link name="back_base">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0200"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0200"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="2.416666666666667e-06" ixy="0" ixz="0" iyy="3.366666666666667e-07" iyz="0" izz="2.0866666666666673e-06"/>
+    </inertial>
+  </link>
+  <joint name="back_base_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 3.1416" xyz="-0.0240 0.0000 0.0100"/>
+    <parent link="base_link"/>
+    <child link="back_base"/>
+  </joint>
+  <link name="back_top">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0100"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="2.166666666666667e-06" ixy="0" ixz="0" iyy="8.666666666666666e-08" iyz="0" izz="2.0866666666666673e-06"/>
+    </inertial>
+  </link>
+  <joint name="back_top_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0250"/>
+    <parent link="back_base"/>
+    <child link="back_top"/>
+  </joint>
+  <link name="back_middle">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0100"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0500 0.0100"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.01"/>
+      <inertia ixx="2.166666666666667e-06" ixy="0" ixz="0" iyy="8.666666666666666e-08" iyz="0" izz="2.0866666666666673e-06"/>
+    </inertial>
+  </link>
+  <joint name="back_middle_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0150"/>
+    <parent link="back_base"/>
+    <child link="back_middle"/>
+  </joint>
+  <link name="back_holder_bottom">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0080 0.0050 0.0010"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0080 0.0050 0.0010"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.001"/>
+      <inertia ixx="2.1666666666666666e-09" ixy="0" ixz="0" iyy="5.416666666666666e-09" iyz="0" izz="7.416666666666667e-09"/>
+    </inertial>
+  </link>
+  <joint name="back_holder_bottom_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0040 0.0000 -0.0045"/>
+    <parent link="back_middle"/>
+    <child link="back_holder_bottom"/>
+  </joint>
+  <link name="back_holder_top">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0080 0.0050 0.0010"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0080 0.0050 0.0010"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.001"/>
+      <inertia ixx="2.1666666666666666e-09" ixy="0" ixz="0" iyy="5.416666666666666e-09" iyz="0" izz="7.416666666666667e-09"/>
+    </inertial>
+  </link>
+  <joint name="back_holder_top_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0040 0.0000 0.0045"/>
+    <parent link="back_middle"/>
+    <child link="back_holder_top"/>
+  </joint>
+  <link name="back_front_left">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0010 0.0010 0.0080"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0010 0.0010 0.0080"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.001"/>
+      <inertia ixx="5.416666666666666e-09" ixy="0" ixz="0" iyy="5.416666666666666e-09" iyz="0" izz="1.6666666666666669e-10"/>
+    </inertial>
+  </link>
+  <joint name="back_front_left_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0075 0.0020 0.0000"/>
+    <parent link="back_middle"/>
+    <child link="back_front_left"/>
+  </joint>
+  <link name="back_front_right">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0010 0.0010 0.0080"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0010 0.0010 0.0080"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.001"/>
+      <inertia ixx="5.416666666666666e-09" ixy="0" ixz="0" iyy="5.416666666666666e-09" iyz="0" izz="1.6666666666666669e-10"/>
+    </inertial>
+  </link>
+  <joint name="back_front_right_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0075 -0.0020 0.0000"/>
+    <parent link="back_middle"/>
+    <child link="back_front_right"/>
+  </joint>
+  <link name="back_anchor_leg">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0050 0.0085"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0020 0.0050 0.0085"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.001"/>
+      <inertia ixx="8.104166666666667e-09" ixy="0" ixz="0" iyy="6.354166666666667e-09" iyz="0" izz="2.416666666666667e-09"/>
+    </inertial>
+  </link>
+  <joint name="back_anchor_leg_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0020 0.0000 0.0000"/>
+    <parent link="back_middle"/>
+    <child link="back_anchor_leg"/>
+  </joint>
+  <link name="back_anchor_base">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0110 0.0020 0.0085"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0110 0.0020 0.0085"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.001"/>
+      <inertia ixx="6.354166666666667e-09" ixy="0" ixz="0" iyy="1.6104166666666668e-08" iyz="0" izz="1.0416666666666664e-08"/>
+    </inertial>
+  </link>
+  <joint name="back_anchor_base_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0055 0.0000 0.0000"/>
+    <parent link="back_anchor_leg"/>
+    <child link="back_anchor_base"/>
+  </joint>
+  <link name="back_anchor_head">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0010 0.0055 0.0095"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0010 0.0055 0.0095"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.001"/>
+      <inertia ixx="1.0041666666666667e-08" ixy="0" ixz="0" iyy="7.604166666666666e-09" iyz="0" izz="2.604166666666666e-09"/>
+    </inertial>
+  </link>
+  <joint name="back_anchor_head_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0055 0.0000 0.0000"/>
+    <parent link="back_anchor_base"/>
+    <child link="back_anchor_head"/>
+  </joint>
+  <link name="back_anchor_left">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0050 0.0000"/>
+      <geometry>
+        <box size="0.0010 0.0100 0.0095"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0050 0.0000"/>
+      <geometry>
+        <box size="0.0010 0.0100 0.0095"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0050 0.0000"/>
+      <mass value="0.001"/>
+      <inertia ixx="1.5854166666666666e-08" ixy="0" ixz="0" iyy="7.604166666666666e-09" iyz="0" izz="8.416666666666668e-09"/>
+    </inertial>
+  </link>
+  <joint name="back_anchor_left_joint" type="revolute">
+    <origin rpy="0.0000 0.0000 0.3000" xyz="0.0000 0.0027 0.0000"/>
+    <parent link="back_anchor_head"/>
+    <child link="back_anchor_left"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="5" lower="-0.3" upper="1.2707963267948965" velocity="2"/>
+  </joint>
+  <link name="back_anchor_right">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 -0.0050 0.0000"/>
+      <geometry>
+        <box size="0.0010 0.0100 0.0095"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 -0.0050 0.0000"/>
+      <geometry>
+        <box size="0.0010 0.0100 0.0095"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 -0.0050 0.0000"/>
+      <mass value="0.001"/>
+      <inertia ixx="1.5854166666666666e-08" ixy="0" ixz="0" iyy="7.604166666666666e-09" iyz="0" izz="8.416666666666668e-09"/>
+    </inertial>
+  </link>
+  <joint name="back_anchor_right_joint" type="revolute">
+    <origin rpy="0.0000 0.0000 -0.3000" xyz="0.0000 -0.0027 0.0000"/>
+    <parent link="back_anchor_head"/>
+    <child link="back_anchor_right"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="5" lower="-1.2707963267948965" upper="0.3" velocity="2"/>
+  </joint>
+  <transmission name="back_anchor_left_transmission" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="back_anchor_left_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="back_anchor_left_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="back_anchor_right_transmission" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="back_anchor_right_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="back_anchor_right_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link name="battery">
+    <visual>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0260 0.0200 0.0200"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <geometry>
+        <box size="0.0260 0.0200 0.0200"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0000"/>
+      <mass value="0.1"/>
+      <inertia ixx="6.6666666666666675e-06" ixy="0" ixz="0" iyy="8.966666666666667e-06" iyz="0" izz="8.966666666666667e-06"/>
+    </inertial>
+  </link>
+  <joint name="battery_joint" type="fixed">
+    <origin rpy="0.0000 0.0000 0.0000" xyz="0.0000 0.0000 0.0300"/>
+    <parent link="base_link"/>
+    <child link="battery"/>
+  </joint>
+</robot>
