@@ -65,3 +65,6 @@ You can then launch the package with
 ```
 roslaunch puzzlebot_assembly run_multi.py N:=$NUMBER_OF_ROBOTS
 ```
+
+### Disclaimer
+This code is only tested fully on Ubuntu 18.04 with python version 3.7. It is partially tested on Macbook but the simulation and optimization parameters may need additional tuning.
