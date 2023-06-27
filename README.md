@@ -1,7 +1,7 @@
 # Reconfigurable Robot Control Using Flexible Coupling Mechanisms
 Sha Yi, Katia Sycara, and Zeynep Temel  
 
-<img src="/img/robot_demo.jpg" width="60%">  
+<img src="/img/robot_demo.jpg" width="45%" />   <img src="/img/bulletsim_line4.gif" width="45%" />
 
 If you find our work helpful, please consider citing our paper:
 ```
